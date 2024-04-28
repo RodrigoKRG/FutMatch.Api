@@ -13,6 +13,7 @@ namespace FutMatch.Api.IoC
             //Services
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IPlayerService, PlayerService>();
+            services.AddScoped<ITeamService, TeamService>();
 
 
             //Repositories

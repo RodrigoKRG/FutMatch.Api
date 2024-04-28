@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace FutMatch.Domain.Requests.Validators
 {
-    public class UserCreateRequestValidator : AbstractValidator<PlayerCreateRequest>
+    public class PlayerCreateRequestValidator : AbstractValidator<PlayerCreateRequest>
     {
-        public UserCreateRequestValidator()
+        public PlayerCreateRequestValidator()
         {
             RuleFor(user => user.Name)
                 .NotEmpty()

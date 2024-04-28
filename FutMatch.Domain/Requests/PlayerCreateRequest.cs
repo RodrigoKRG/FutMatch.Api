@@ -46,7 +46,7 @@ namespace FutMatch.Domain.Requests
 
         public override bool IsValid()
         {
-            ValidationResult = new UserCreateRequestValidator()
+            ValidationResult = new PlayerCreateRequestValidator()
                 .Validate(this);
             return ValidationResult.IsValid;
         }

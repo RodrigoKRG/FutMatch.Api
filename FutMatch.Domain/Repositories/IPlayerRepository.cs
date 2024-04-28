@@ -5,4 +5,5 @@ namespace FutMatch.Domain.Repositories;
 public interface IPlayerRepository : IGenericRepository<Player>
 {
     Task<bool> ExistsByCpfAsync(string cpf);
+    Task<Player?> GetByUserId(long userId);
 }

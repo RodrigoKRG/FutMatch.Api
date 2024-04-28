@@ -9,7 +9,15 @@ namespace FutMatch.Domain.Requests
         public DateTime Timestamp { get; private set; }
 
         [JsonIgnore]
-        public ValidationResult ValidationResult { get; protected set; }
+        public ValidationResult? ValidationResult { get; protected set; }
+
+        [JsonIgnore]
+        public string? user { get; private set; }
+
+        public void SetUser(string user)
+        {
+            this.user = user;
+        }
 
         protected RequestBase()
         {

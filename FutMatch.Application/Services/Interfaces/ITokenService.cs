@@ -8,5 +8,6 @@ namespace FutMatch.Application.Services.Interfaces
     {
         Task<LoginResponse> GenerateToken(LoginRequest request, bool isRefreshToken = false);
         string GetLogin(ClaimsPrincipal user);
+        long GetId(ClaimsPrincipal user);
     }
 }

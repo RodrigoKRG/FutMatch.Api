@@ -126,6 +126,10 @@ namespace FutMatch.Application.Services
         }
 
         public string GetLogin(ClaimsPrincipal user)
-            => user.FindFirst(ClaimTypes.Email)?.Value!;
+            => user.FindFirst("Login")?.Value!;
+
+        public long GetId(ClaimsPrincipal user)
+            =>  long.Parse(user.FindFirst("Id")?.Value!);
+
     }
 }

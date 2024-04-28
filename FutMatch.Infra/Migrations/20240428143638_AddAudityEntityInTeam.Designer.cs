@@ -4,6 +4,7 @@ using FutMatch.Infra.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FutMatch.Infra.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240428143638_AddAudityEntityInTeam")]
+    partial class AddAudityEntityInTeam
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -111,7 +114,7 @@ namespace FutMatch.Infra.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Addresses", (string)null);
+                    b.ToTable("Addresses");
                 });
 
             modelBuilder.Entity("FutMatch.Domain.Entities.FieldPosition", b =>
@@ -129,7 +132,7 @@ namespace FutMatch.Infra.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FieldPositions", (string)null);
+                    b.ToTable("FieldPositions");
                 });
 
             modelBuilder.Entity("FutMatch.Domain.Entities.Player", b =>
@@ -195,7 +198,7 @@ namespace FutMatch.Infra.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Players", (string)null);
+                    b.ToTable("Players");
                 });
 
             modelBuilder.Entity("FutMatch.Domain.Entities.Team", b =>
@@ -230,7 +233,7 @@ namespace FutMatch.Infra.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Teams", (string)null);
+                    b.ToTable("Teams");
                 });
 
             modelBuilder.Entity("FutMatch.Domain.Entities.User", b =>
@@ -283,7 +286,7 @@ namespace FutMatch.Infra.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("PlayerTeam", b =>

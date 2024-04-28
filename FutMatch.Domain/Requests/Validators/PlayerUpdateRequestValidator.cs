@@ -2,9 +2,9 @@
 
 namespace FutMatch.Domain.Requests.Validators
 {
-    public class UserUpdateRequestValidator : AbstractValidator<PlayerUpdateRequest>
+    public class PlayerUpdateRequestValidator : AbstractValidator<PlayerUpdateRequest>
     {
-        public UserUpdateRequestValidator()
+        public PlayerUpdateRequestValidator()
         {
             RuleFor(user => user.Name)
                 .Length(3, 50)

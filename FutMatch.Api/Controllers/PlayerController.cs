@@ -16,7 +16,7 @@ namespace FutMatch.Api.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Master, Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllAsync()
         {
             var users = await _userService.GetAllAsync();
@@ -24,7 +24,7 @@ namespace FutMatch.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "Master, Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetByIdAsync(long id)
         {
             var user = await _userService.GetByIdAsync(id);
@@ -49,7 +49,7 @@ namespace FutMatch.Api.Controllers
         }
 
         [HttpPut("Update")]
-        [Authorize(Roles = "User")]
+        [Authorize]
         public async Task<IActionResult> UpdateAsync(long id, [FromBody] PlayerUpdateRequest request)
         {
             if (!request.IsValid())
@@ -60,7 +60,7 @@ namespace FutMatch.Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Master")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteAsync(long id)
         {
             var result = await _userService.DeleteAsync(id);

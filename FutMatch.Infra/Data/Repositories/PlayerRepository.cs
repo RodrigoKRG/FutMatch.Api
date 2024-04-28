@@ -19,4 +19,9 @@ public class PlayerRepository : GenericRepository<Player>, IPlayerRepository
     {
         return await _set.AnyAsync(player => player.Cpf == cpf);  
     }
+
+    public async Task<Player?> GetByUserId(long userId)
+    {
+        return await _set.FirstOrDefaultAsync(player => player.UserId == userId);
+    }
 }
